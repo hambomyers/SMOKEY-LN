@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Smokey Lane Mobile Home Park — Offering Summary</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html, body {
+    background: #ffffff !important;
+  }
+
+  body {
+    font-family: Helvetica, Arial, sans-serif;
+    color: #000000;
+    background: #ffffff;
+    line-height: 1.5;
+    font-size: 15px;
+  }
+
+  .doc {
+    max-width: 820px;
+    margin: 0 auto;
+    padding: 48px 32px 64px;
+    background: #ffffff;
+    color: #000000;
+  }
+
+  @media (max-width: 600px) {
+    .doc { padding: 32px 20px; }
+  }
+
+  /* ----- Document header ----- */
+  .doc-header {
+    border-bottom: 2px solid #000000;
+    padding-bottom: 24px;
+    margin-bottom: 32px;
+  }
+  .doc-eyebrow {
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+    color: #000000;
+    font-weight: 700;
+  }
+  .doc-title {
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 8px;
+    color: #000000;
+  }
+  .doc-subtitle {
+    font-size: 15px;
+    color: #000000;
+  }
+
+  /* ----- Section ----- */
+  section {
+    margin-bottom: 36px;
+  }
+  h2 {
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding-bottom: 6px;
+    border-bottom: 1px solid #000000;
+    margin-bottom: 16px;
+    color: #000000;
+  }
+
+  p {
+    margin-bottom: 12px;
+    color: #000000;
+  }
+  p:last-child { margin-bottom: 0; }
+
+  /* ----- Key stats grid ----- */
+  .stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    border: 1px solid #000000;
+  }
+  @media (max-width: 500px) {
+    .stats { grid-template-columns: 1fr; }
+  }
+  .stat {
+    padding: 14px 16px;
+    border-right: 1px solid #000000;
+    border-bottom: 1px solid #000000;
+  }
+  .stat:nth-child(2n) { border-right: none; }
+  .stat:nth-last-child(-n+2) { border-bottom: none; }
+  @media (max-width: 500px) {
+    .stat { border-right: none; border-bottom: 1px solid #000000; }
+    .stat:last-child { border-bottom: none; }
+  }
+  .stat-label {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #000000;
+    margin-bottom: 4px;
+    font-weight: 700;
+  }
+  .stat-value {
+    font-size: 18px;
+    font-weight: 700;
+    color: #000000;
+  }
+
+  /* ----- Inventory table ----- */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+    color: #000000;
+  }
+  th, td {
+    text-align: left;
+    padding: 8px 10px;
+    border-bottom: 1px solid #000000;
+    vertical-align: top;
+    color: #000000;
+  }
+  thead th {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    border-bottom: 2px solid #000000;
+    font-weight: 700;
+    color: #000000;
+  }
+  td.num { white-space: nowrap; }
+  td.rent { text-align: right; white-space: nowrap; font-variant-numeric: tabular-nums; }
+  th.rent { text-align: right; }
+  tr.total td {
+    border-top: 2px solid #000000;
+    border-bottom: none;
+    font-weight: 700;
+    padding-top: 12px;
+  }
+  .na { color: #000000; font-style: italic; }
+
+  @media (max-width: 600px) {
+    th, td { padding: 6px 6px; font-size: 13px; }
+    .col-hide-mobile { display: none; }
+  }
+
+  /* ----- Highlights list ----- */
+  ul.points {
+    list-style: none;
+    padding: 0;
+  }
+  ul.points li {
+    padding: 10px 0 10px 24px;
+    border-bottom: 1px solid #000000;
+    position: relative;
+    color: #000000;
+  }
+  ul.points li:last-child { border-bottom: none; }
+  ul.points li::before {
+    content: '—';
+    position: absolute;
+    left: 0;
+    font-weight: 700;
+    color: #000000;
+  }
+  ul.points strong { display: block; margin-bottom: 2px; color: #000000; }
+  ul.points span { color: #000000; }
+
+  /* ----- Contact ----- */
+  .contact-info {
+    border: 1px solid #000000;
+    padding: 16px;
+  }
+  .contact-row {
+    display: flex;
+    padding: 4px 0;
+    font-size: 14px;
+    color: #000000;
+  }
+  .contact-row .ck {
+    width: 80px;
+    font-weight: 700;
+    color: #000000;
+  }
+  .contact-row a { color: #000000; text-decoration: underline; }
+
+  /* ----- Footer / disclaimer ----- */
+  .disclaimer {
+    margin-top: 48px;
+    padding-top: 16px;
+    border-top: 1px solid #000000;
+    font-size: 12px;
+    color: #000000;
+    line-height: 1.5;
+  }
+
+  /* Print */
+  @media print {
+    body { font-size: 11pt; }
+    .doc { padding: 0; max-width: 100%; }
+    section { page-break-inside: avoid; }
+  }
+</style>
+</head>
+<body>
+
+<div class="doc">
+
+  <header class="doc-header">
+    <div class="doc-eyebrow">Offering Summary &middot; Confidential</div>
+    <h1 class="doc-title">Smokey Lane Mobile Home Park</h1>
+    <div class="doc-subtitle">Elkton, Virginia 22827 &middot; Rockingham County &middot; 1.755 acres &middot; Parcels 130E-(2)-L21 and 130E-(2)-L22</div>
+  </header>
+
+  <section>
+    <h2>Summary</h2>
+    <div class="stats">
+      <div class="stat">
+        <div class="stat-label">Asking Price</div>
+        <div class="stat-value">$400,000</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Total Lots</div>
+        <div class="stat-value">9 (7 paying, 1 vacant pad, 1 utility)</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Acreage</div>
+        <div class="stat-value">1.755 acres</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Zoning</div>
+        <div class="stat-value">A-2 General Agriculture (legal nonconforming MHP use, est. 1970s)</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Current Monthly Rent</div>
+        <div class="stat-value">$3,004.63</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Current Annual Rent</div>
+        <div class="stat-value">$36,055.56</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Gross Cap Rate</div>
+        <div class="stat-value">9.01% at asking</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Tax Assessed Value</div>
+        <div class="stat-value">$74,100</div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Property Description</h2>
+    <p>Nine-lot mobile home community in Elkton, Virginia, Rockingham County. Two contiguous parcels (130E-(2)-L21 and 130E-(2)-L22) totaling 1.755 acres with road frontage on Smokey Lane off Rockingham Pike. Park has operated continuously as a mobile home community since the early 1970s.</p>
+    <p>Seven lots currently rented. One lot (161) is a vacant pad. One lot (143) houses the park's water pump station and is not a revenue lot. Six of the seven paying tenants own their trailers; the seller collects lot rent only. One lot (163) is rented with the trailer included.</p>
+  </section>
+
+  <section>
+    <h2>Environmental</h2>
+    <p>A Phase I / Limited Phase II Environmental Site Assessment was completed by HydroGeo Environmental, LLC in April 2022. Report and Phase II soil and groundwater analytical results available under NDA. HydroGeo's stated conclusion: no further environmental investigation recommended.</p>
+  </section>
+
+  <section>
+    <h2>Infrastructure</h2>
+    <p>Septic system has been updated by current ownership. Risers installed to provide inspection access to both the septic tank and pump tank.</p>
+    <p>Water service is provided by the on-site well and pump house at lot 143.</p>
+  </section>
+
+  <section>
+    <h2>Lot Inventory &amp; Rent Roll</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Lot</th>
+          <th>Address</th>
+          <th>Resident</th>
+          <th class="rent">Monthly</th>
+          <th class="col-hide-mobile">Note</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="num">1</td>
+          <td>115 Smokey Lane</td>
+          <td>Leondas &amp; Stella Price</td>
+          <td class="rent">$393.75</td>
+          <td class="col-hide-mobile">Tenant-owned trailer</td>
+        </tr>
+        <tr>
+          <td class="num">2</td>
+          <td>123 Smokey Lane</td>
+          <td>Nick Saure</td>
+          <td class="rent">$393.75</td>
+          <td class="col-hide-mobile">Tenant-owned trailer</td>
+        </tr>
+        <tr>
+          <td class="num">3</td>
+          <td>129 Smokey Lane</td>
+          <td>Elaine Knight</td>
+          <td class="rent">$393.75</td>
+          <td class="col-hide-mobile">Tenant-owned trailer</td>
+        </tr>
+        <tr>
+          <td class="num">4</td>
+          <td>143 Smokey Lane</td>
+          <td>&mdash;</td>
+          <td class="rent na">non-revenue</td>
+          <td class="col-hide-mobile">Water utility station</td>
+        </tr>
+        <tr>
+          <td class="num">5</td>
+          <td>153 Smokey Lane</td>
+          <td>James Koogler</td>
+          <td class="rent">$385.88</td>
+          <td class="col-hide-mobile">Tenant-owned trailer</td>
+        </tr>
+        <tr>
+          <td class="num">6</td>
+          <td>161 Smokey Lane</td>
+          <td>&mdash;</td>
+          <td class="rent na">vacant pad</td>
+          <td class="col-hide-mobile">&nbsp;</td>
+        </tr>
+        <tr>
+          <td class="num">7</td>
+          <td>163 Smokey Lane</td>
+          <td>Sheila Shifflett</td>
+          <td class="rent">$650.00</td>
+          <td class="col-hide-mobile">Owner-rented trailer included</td>
+        </tr>
+        <tr>
+          <td class="num">8</td>
+          <td>173 Smokey Lane</td>
+          <td>Martin Shifflett</td>
+          <td class="rent">$393.75</td>
+          <td class="col-hide-mobile">Tenant-owned trailer</td>
+        </tr>
+        <tr>
+          <td class="num">9</td>
+          <td>177 Smokey Lane</td>
+          <td>Connie Helmic</td>
+          <td class="rent">$393.75</td>
+          <td class="col-hide-mobile">Tenant-owned trailer</td>
+        </tr>
+        <tr class="total">
+          <td></td>
+          <td>Total Monthly Rent</td>
+          <td></td>
+          <td class="rent">$3,004.63</td>
+          <td class="col-hide-mobile">$36,055.56 annualized</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section>
+    <h2>Contact</h2>
+    <div class="contact-info">
+      <div class="contact-row"><span class="ck">Owner</span><span>Hamilton R. Myers, Jr.</span></div>
+      <div class="contact-row"><span class="ck">Entity</span><span>Blue Ridge Square, LLC</span></div>
+      <div class="contact-row"><span class="ck">Email</span><span><a href="mailto:hambomyers@gmail.com">hambomyers@gmail.com</a></span></div>
+      <div class="contact-row"><span class="ck">Phone</span><span><a href="tel:+14342428989">434.242.8989</a></span></div>
+    </div>
+  </section>
+
+  <div class="disclaimer">
+    Figures reflect current operating data. Tenant identities, rent levels, and pad status as of May 2026. Information subject to verification. No broker representation. Seller reserves the right to accept, reject, or counter any offer in its discretion.
+  </div>
+
+</div>
+
+</body>
+</html>
